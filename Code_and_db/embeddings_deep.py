@@ -2,7 +2,6 @@ from langchain_openai.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv
 import numpy as np
 
-
 load_dotenv()
 
 embeddings_model = OpenAIEmbeddings(model="text-embedding-3-small")
