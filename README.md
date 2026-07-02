@@ -5,7 +5,7 @@ This repository contains code examples and implementations for building producti
 ## 📂 Project Structure
 
 ```text
-├── Chromadb/
+├── Code_and_db/
 │   ├── app.py                # Direct integration and usage of raw ChromaDB client
 │   └── vector_stores.py      # LangChain's Chroma integration (similarity search, metadata filtering, retriever setup)
 ├── docs/
@@ -62,13 +62,13 @@ Demonstrates how to load PDFs into LangChain document formats.
 uv run document_loaders.py
 ```
 
-### 3. Raw Chroma DB client (`Chromadb/app.py`)
+### 3. Raw Chroma DB client (`Code_and_db/app.py`)
 Shows how to interact directly with ChromaDB (without LangChain wrappers): creating collections, upserting documents, and performing raw queries.
 ```bash
-uv run Chromadb/app.py
+uv run Code_and_db/app.py
 ```
 
-### 4. LangChain Vector Store Integration (`Chromadb/vector_stores.py`)
+### 4. LangChain Vector Store Integration (`Code_and_db/vector_stores.py`)
 Illustrates production patterns for utilizing Vector Stores, including:
 * **Chroma Basics**: Creating vector stores from local documents.
 * **Similarity Search with Scores**: Finding relevant documents and converting distance metrics into similarity scores.
@@ -78,5 +78,5 @@ Illustrates production patterns for utilizing Vector Stores, including:
 
 To run the configured entry points in the vector store script:
 ```bash
-uv run Chromadb/vector_stores.py
+uv run Code_and_db/vector_stores.py
 ```
