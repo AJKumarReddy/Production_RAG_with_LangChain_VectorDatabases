@@ -11,10 +11,13 @@ dependencies = [
     "langchain-chroma>=1.1.0",
     "langchain-community>=0.4.2",
     "langchain-core>=1.4.8",
+    "langchain-experimental>=0.4.2",
     "langchain-openai>=1.3.3",
     "langchain-pdf>=0.2.0",
     "langgraph>=1.2.6",
     "ollama>=0.6.2",
     "pypdf>=6.14.2",
+    "pyrefly>=1.1.1",
     "python-dotenv>=1.2.2",
+    "rank-bm25>=0.2.2",
 ]

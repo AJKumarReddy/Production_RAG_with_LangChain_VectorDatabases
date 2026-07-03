@@ -98,6 +98,6 @@ def embedding_caching():
 
 if __name__ == "__main__":
     # batch_embeddings()
-    basic_embeddings()
-    # similarity_search()
+    # basic_embeddings()
+    similarity_search()
     # embedding_caching()
