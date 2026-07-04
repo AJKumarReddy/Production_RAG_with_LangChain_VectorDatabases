@@ -5,6 +5,7 @@ from langchain_anthropic import ChatAnthropic
 import os
 
 load_dotenv()
+# Just for checking LLM connectivity
 
 def main():
 
