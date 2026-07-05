@@ -11,6 +11,11 @@ documents = [
 ]
 
 query = "Hello, World!"
+# upsert : add or replace
+# get  : retrieve
+# delete : delete
+# update : update
+# add : add only if not exists
 
 for doc in documents:
     collection.upsert(
