@@ -3,6 +3,7 @@ Building RAG Pipelines
 Complete retrieval-augmented generation implementation
 """
 
+
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableParallel
@@ -168,7 +169,7 @@ Answer (include sources):"""
         | llm
         | StrOutputParser()
     )
-
+    
     print("RAG with Sources:\n")
     answer = rag_chain.invoke("What are the core components of LangChain?")
     print(f"Q: What are the core components?\n")
@@ -342,8 +343,8 @@ Format: [Confidence: X] Answer"""
 
 
 if __name__ == "__main__":
-    demo_basic_rag()
-    # demo_rag_with_sources()
+    # demo_basic_rag()
+    demo_rag_with_sources()
     # demo_rag_with_fallback()
     # demo_structured_rag()
     # exercise_document_qa()

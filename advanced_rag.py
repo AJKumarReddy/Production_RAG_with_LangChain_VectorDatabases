@@ -1,7 +1,5 @@
-"""
-Advanced RAG Patterns
-Multi-query, self-query, compression, hybrid search
-"""
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 from langchain_classic.retrievers import ContextualCompressionRetriever
