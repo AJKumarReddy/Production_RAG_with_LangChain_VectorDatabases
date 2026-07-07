@@ -6,9 +6,12 @@ This repository contains code examples and implementations for building producti
 
 ```text
 ├── app.py                    # Direct integration and usage of raw ChromaDB client
+├── cost_optimization.py      # LLM cost optimization strategies (model routing, semantic caching, token budgeting)
 ├── embeddings_deep.py        # Deep dive into Embeddings (batching, similarity calculation, caching)
 ├── hybrid_search.py          # Hybrid retrieval (dense vector embeddings + sparse BM25) using EnsembleRetriever
+├── langsmith_setup.py        # LangSmith setup and tracing configurations for production observability
 ├── rag_pipeline.py           # Full RAG implementations (Basic, Sources, Fallbacks, Structured Output, Q&A exercise)
+├── semantic_chunking.py      # Comparison of recursive character chunking and semantic chunking with Chroma retrieval
 ├── text_splitters.py         # Document splitters (Recursive, Markdown Header, Code, and PDF splitters)
 ├── vector_stores.py          # LangChain's Chroma integration (similarity search, metadata filtering, retriever setup)
 ├── docs/
@@ -132,4 +135,36 @@ Implements several variations of Retrieval-Augmented Generation workflows:
 To run:
 ```bash
 uv run rag_pipeline.py
+```
+
+### 9. Cost Optimization Patterns (`cost_optimization.py`)
+Demonstrates strategies for lowering LLM API costs in production:
+* **Model Routing**: Dynamically routing queries to cheap (gpt-4o-mini) or expensive (gpt-4o) models depending on classified complexity.
+* **Semantic Caching**: Caching and reusing responses for identical/similar queries to avoid LLM calls.
+* **Token Budgeting**: Estimating input/output token usage and enforcing a max token threshold limit per request.
+
+To run:
+```bash
+uv run cost_optimization.py
+```
+
+### 10. LangSmith Setup & Observability (`langsmith_setup.py`)
+Shows how to set up production tracing, debugging, and monitoring using LangSmith:
+* **Basic Tracing**: Auto-tracing LangChain runnables.
+* **Run Customization**: Using `@traceable` to group, name, and tag runs.
+* **Metadata Tagging**: Injecting custom metadata (e.g. user_id) for advanced trace queries and filtering.
+
+To run:
+```bash
+uv run langsmith_setup.py
+```
+
+### 11. Semantic Chunking (`semantic_chunking.py`)
+Compares standard splitting methods with semantic-based splitting:
+* **Recursive vs. Semantic**: Splitting documentation using both RecursiveCharacterTextSplitter and SemanticChunker.
+* **Chroma Comparison**: Storing chunks in separate Chroma collections and evaluating retrieval accuracy on test queries.
+
+To run:
+```bash
+uv run semantic_chunking.py
 ```
