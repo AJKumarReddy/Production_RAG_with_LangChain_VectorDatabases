@@ -10,6 +10,7 @@ This repository contains code examples and implementations for building producti
 ├── embeddings_deep.py        # Deep dive into Embeddings (batching, similarity calculation, caching)
 ├── hybrid_search.py          # Hybrid retrieval (dense vector embeddings + sparse BM25) using EnsembleRetriever
 ├── langsmith_setup.py        # LangSmith setup and tracing configurations for production observability
+├── prod_ready.py             # Production-ready chunking strategy with semantic grouping and recursive fallback
 ├── rag_pipeline.py           # Full RAG implementations (Basic, Sources, Fallbacks, Structured Output, Q&A exercise)
 ├── semantic_chunking.py      # Comparison of recursive character chunking and semantic chunking with Chroma retrieval
 ├── text_splitters.py         # Document splitters (Recursive, Markdown Header, Code, and PDF splitters)
@@ -167,4 +168,13 @@ Compares standard splitting methods with semantic-based splitting:
 To run:
 ```bash
 uv run semantic_chunking.py
+```
+
+### 12. Production-Ready Chunking (`prod_ready.py`)
+Demonstrates a production-ready chunking strategy with dynamic fallback:
+* **Smart Chunker**: Attempts semantic chunking first, checking if any chunk size exceeds a target maximum size threshold, and automatically falls back to recursive character chunking if needed or if an exception is encountered.
+
+To run:
+```bash
+uv run prod_ready.py
 ```
