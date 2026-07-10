@@ -5,6 +5,7 @@ This repository contains code examples and implementations for building producti
 ## 📂 Project Structure
 
 ```text
+├── advanced_rag.py          # Advanced retrieval strategies (Multi-Query, Contextual Compression, Ensemble/Hybrid search, Parent Document Retriever)
 ├── app.py                    # Direct integration and usage of raw ChromaDB client
 ├── cost_optimization.py      # LLM cost optimization strategies (model routing, semantic caching, token budgeting)
 ├── embeddings_deep.py        # Deep dive into Embeddings (batching, similarity calculation, caching)
@@ -177,4 +178,17 @@ Demonstrates a production-ready chunking strategy with dynamic fallback:
 To run:
 ```bash
 uv run prod_ready.py
+```
+
+### 13. Advanced Retrieval Strategies (`advanced_rag.py`)
+Demonstrates advanced retrieval techniques to optimize RAG accuracy and context:
+* **Multi-Query Retriever**: Generates multiple query perspectives to improve retrieval recall.
+* **Contextual Compression**: Extracts only the query-relevant content from retrieved documents to reduce LLM token usage and focus attention.
+* **Ensemble/Hybrid Search**: Combines keyword (BM25) and dense semantic vector search for robust retrieval.
+* **Parent Document Retriever**: Stores small chunks for precise embedding search, but returns larger parent document/context for higher-quality generation.
+* **Complete Advanced RAG Chain**: Chains multi-query generation, contextual compression, and RAG into a single runnable pipeline.
+
+To run:
+```bash
+uv run advanced_rag.py
 ```
